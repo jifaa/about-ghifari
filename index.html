@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghifari | Programmer & Cosplayer</title>
+    
+    <!-- Google Fonts - Clean + Rounded artistic font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION - Fixed navbar dengan glass effect
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo dengan nuansa hangat -->
+            <a href="#home" class="d-flex align-items-center gap-2 fs-4 fw-bold text-decoration-none me-auto" >
+                <!-- <span class="logo-icon"></span> -->
+                <span class="logo-text">Ghifari</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-links pe-3" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">Tentang</a></li>
+                <li><a href="#portfolio" class="nav-link">Portofolio</a></li>
+                <li><a href="#cosplay" class="nav-link">Cosplay</a></li>
+                <li><a href="#contact" class="nav-link">Kontak</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Landing page dengan suasana cozy
+         Background: Ilustrasi kamar kerja dengan cahaya matahari sore
+         ============================================ -->
+    <section id="home" class="hero">
+        <!-- Decorative elements untuk nuansa slice-of-life -->
+        <div class="hero-decorations">
+            <div class="floating-leaf leaf-1">🍃</div>
+            <div class="floating-leaf leaf-2">🌿</div>
+            <div class="floating-leaf leaf-3">✨</div>
+            <div class="sun-rays"></div>
+        </div>
+        
+        <!-- Background overlay dengan gradasi lembut -->
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <!-- Greeting kecil -->
+                <!-- <span class="hero-greeting animate-fade-in">Selamat datang di ruang data diri saya</span> -->
+                
+                <!-- Headline utama -->
+                <h1 class="hero-title tracking-in-expand">
+                    Hai, saya <span class="highlight">Ghifari</span>
+                </h1>
+                
+                <!-- Subtitle dengan typing effect -->
+                <p class="hero-subtitle animate-fade-in-up delay-1">
+                    <span class="typing-text">Programmer</span> di awal pekan,
+                    <span class="typing-text accent">Cosplayer</span> di akhir pekan.
+                </p>
+                
+                <!-- Deskripsi singkat -->
+                <p class="hero-description animate-fade-in-up delay-2">
+                    "Baris kode adalah pondasi dunia digital dari sebuah logika,
+                    Kostum dan ekspresi membangkitkan jiwa dari dunia fantasi."
+                    <br>
+                    <span style="font-size: 0.85rem; opacity: 0.8;">-Ghifari</span>
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-buttons animate-fade-in-up delay-3">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <!-- <i class="fas fa-code"></i>--> Lihat Project Saya
+                    </a>
+                    <a href="#cosplay" class="btn btn-secondary">
+                        <!-- <i class="fas fa-paper-plane"></i>--> Lihat Cosplay Saya
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero illustration placeholder -->
+            <div class="hero-illustration animate-fade-in-right">
+                <div class="illustration-frame">
+                    <!-- Placeholder untuk photo profil -->
+                    <div class="illustration-placeholder">
+                        <img src="foto/profil.png" alt="profil ghifari">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator animate-bounce">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION - Tentang Saya
+         Tone: Hangat, personal, profesional
+         ============================================ -->
+    <section id="about" class="about">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header">
+                <h2 class="section-title">Tentang Saya</h2>
+                <p class="section-subtitle">Seorang programmer yang juga mencintai dunia cosplay</p>
+            </div>
+            
+            <div class="about-content">
+                <!-- Profile card -->
+                <div class="about-profile animate-on-scroll">
+                    <div class="profile-image-container">
+                        <!-- Placeholder avatar dengan style anime -->          
+                            <div style="margin-top: -30px;">
+                                <img src="Foto/foto2.png" alt="foto" class="img-fluid">
+                            </div>
+                        <div class="profile-decoration">
+                            <span class="deco-flower">🌸</span>
+                            <span class="deco-star">⭐</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick stats -->
+                    <!-- <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Tahun Coding</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Proyek Selesai</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Cosplay Events</span>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <!-- About text -->
+                <div class="about-text animate-on-scroll">
+                    <h3 class="about-heading">Halo! Senang bertemu denganmu 🌻</h3>
+                    
+                    <p class="about-paragraph">
+                        Perkenalkan, saya <strong>Ghifari</strong>, mahasiswa IT dengan hati yang berlabuh pada dunia cosplay. Di pertemuan sunyi antara logika dan rasa, saya percaya teknologi dan seni mampu mengalir bersama, seperti mimpi yang perlahan menjadi nyata.
+                    </p>
+                    
+                    <p class="about-paragraph">
+                        Kecintaan saya terhadap teknologi tumbuh sejak masa kecil, berawal dari rasa penasaran sederhana yang perlahan berkembang menjadi ketertarikan yang mendalam hingga hari ini. Di waktu-waktu luang, saya mengekspresikan diri melalui cosplay, sebuah ruang di mana saya dapat menghidupkan karakter fiksi dan dunia fantasi, seolah memberi napas pada imajinasi yang selama ini hidup dalam benak.Kecintaan saya terhadap teknologi tumbuh sejak masa kecil, berawal dari rasa penasaran sederhana yang perlahan berkembang menjadi ketertarikan yang mendalam hingga hari ini. Di waktu-waktu luang, saya mengekspresikan diri melalui cosplay, sebuah ruang di mana saya dapat menghidupkan karakter fiksi dan dunia fantasi, seolah memberi napas pada imajinasi yang selama ini hidup dalam benak.
+                    </p>
+                    
+                    <p class="about-paragraph">
+                        Melalui program, saya menyalurkan seni ke dalam ruang digital yang hidup oleh logika. Melalui cosplay, saya menghidupkan karakter fiksi dari dunia fantasi, menghadirkan imajinasi dalam wujud yang nyata.
+                    </p>
+                    
+                    <!-- Download CV button -->
+                    <!-- <a href="#" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Download CV
+                    </a> -->
+                </div>
+            </div>
+            
+            <!-- Skills section -->
+            <div class="skills-section animate-on-scroll">
+                <h3 class="skills-title">
+                    <i class="fas fa-tools"></i> Tech Stack & Skills
+                </h3>
+                
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="skill-category">
+                        <h4 class="category-title">
+                            <span class="category-icon">💻</span> Bahasa Pemrograman
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C#</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Frameworks -->
+                    <div class="skill-category">
+                        <h4 class="category-title">
+                            <span class="category-icon">🚀</span> Framework & Library
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools -->
+                    <div class="skill-category">
+                        <h4 class="category-title">
+                            <span class="category-icon">🛠️</span> Tools & Platform
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Soft Skills -->
+                    <div class="skill-category">
+                        <h4 class="category-title">
+                            <span class="category-icon">🌟</span> Soft Skills
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Team Collaboration</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Creativity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PORTFOLIO SECTION - Proyek Programming
+         Layout: Card grid dengan hover effects lembut
+         <!-- ============================================ -->
+     <section id="portfolio" class="portfolio">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header">
+                <span class="section-tag">💼 Karya</span>
+                <h2 class="section-title">Portofolio Programming</h2>
+                <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan dengan sepenuh hati</p>
+            </div>
+            
+            <!-- Filter buttons (optional) -->
+            <div class="portfolio-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="other">Lainnya</button>
+            </div>
+            
+            <!-- Project cards grid -->
+            <div class="portfolio-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card animate-on-scroll" data-category="web">
+                    <div class="card-image">
+                        <div class="image-placeholder web-app">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="overlay-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="overlay-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Toko Online Minimalis</h3>
+                        <p class="card-description">
+                            E-commerce platform dengan UI yang bersih dan intuitif. 
+                            Fitur lengkap mulai dari katalog produk hingga checkout.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 2 -->
+                <article class="project-card animate-on-scroll" data-category="web">
+                    <div class="card-image">
+                        <div class="image-placeholder dashboard">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="overlay-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="overlay-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Dashboard Analytics</h3>
+                        <p class="card-description">
+                            Dashboard interaktif untuk visualisasi data bisnis 
+                            dengan grafik real-time dan laporan otomatis.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 3 -->
+                <article class="project-card animate-on-scroll" data-category="mobile">
+                    <div class="card-image">
+                        <div class="image-placeholder mobile-app">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="overlay-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="overlay-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Habit Tracker App</h3>
+                        <p class="card-description">
+                            Aplikasi mobile untuk tracking kebiasaan harian 
+                            dengan gamifikasi dan reminder yang customizable.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 4 -->
+                <article class="project-card animate-on-scroll" data-category="web">
+                    <div class="card-image">
+                        <div class="image-placeholder blog">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="overlay-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="overlay-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Personal Blog Platform</h3>
+                        <p class="card-description">
+                            Blog platform dengan CMS custom, markdown support, 
+                            dan SEO optimization built-in.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 5 -->
+                <article class="project-card animate-on-scroll" data-category="other">
+                    <div class="card-image">
+                        <div class="image-placeholder api">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="overlay-link" title="Documentation">
+                                    <i class="fas fa-book"></i>
+                                </a>
+                                <a href="#" class="overlay-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">RESTful API Service</h3>
+                        <p class="card-description">
+                            Backend API service dengan authentication, rate limiting, 
+                            dan dokumentasi lengkap menggunakan Swagger.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project Card 6 -->
+                <article class="project-card animate-on-scroll" data-category="other">
+                    <div class="card-image">
+                        <div class="image-placeholder game">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-links">
+                                <a href="#" class="overlay-link" title="Play Game">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                                <a href="#" class="overlay-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Pixel Adventure Game</h3>
+                        <p class="card-description">
+                            Game platformer sederhana dengan pixel art aesthetic 
+                            dan soundtrack original.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Aseprite</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- View more button -->
+            <div class="portfolio-more animate-on-scroll">
+                <a href="project.html" class="btn btn-outline">
+                    <i class="fab fa-github"></i> Lihat Lebih Lengkap
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COSPLAY GALLERY - Galeri foto cosplay
+         Layout: Masonry grid dengan soft frames
+         ============================================ -->
+    <section id="cosplay" class="cosplay">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header">
+                <span class="section-tag">📸 Gallery</span>
+                <h2 class="section-title">Galeri Cosplay</h2>
+                <p class="section-subtitle">Menghidupkan karakter favorit dari anime, game, dan manga</p>
+            </div>
+            
+            <!-- Cosplay gallery grid -->
+            <div class="cosplay-grid">
+                <!-- Cosplay Item 1 -->
+                <div class="cosplay-item animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">🎭</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Anya Forger</h4>
+                                <p class="series-name">Spy x Family</p>
+                                <span class="event-tag">Comifuro 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 2 -->
+                <div class="cosplay-item tall animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">👘</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Nezuko Kamado</h4>
+                                <p class="series-name">Demon Slayer</p>
+                                <span class="event-tag">Japan Festival</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 3 -->
+                <div class="cosplay-item animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">⚔️</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">2B</h4>
+                                <p class="series-name">NieR: Automata</p>
+                                <span class="event-tag">Private Shoot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 4 -->
+                <div class="cosplay-item animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">🌸</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Sakura Kinomoto</h4>
+                                <p class="series-name">Cardcaptor Sakura</p>
+                                <span class="event-tag">Anime Expo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 5 -->
+                <div class="cosplay-item wide animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">🎮</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Raiden Shogun</h4>
+                                <p class="series-name">Genshin Impact</p>
+                                <span class="event-tag">Cosplay Summit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 6 -->
+                <div class="cosplay-item animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">🔮</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Violet Evergarden</h4>
+                                <p class="series-name">Violet Evergarden</p>
+                                <span class="event-tag">Studio Shoot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 7 -->
+                <div class="cosplay-item animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">🎀</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Miku Nakano</h4>
+                                <p class="series-name">Quintessential Quintuplets</p>
+                                <span class="event-tag">Comifuro 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cosplay Item 8 -->
+                <div class="cosplay-item tall animate-on-scroll">
+                    <div class="cosplay-frame">
+                        <div class="cosplay-image-placeholder">
+                            <span class="placeholder-icon">🌙</span>
+                            <span class="placeholder-text">Photo</span>
+                        </div>
+                        <div class="cosplay-overlay">
+                            <div class="cosplay-info">
+                                <h4 class="character-name">Sailor Moon</h4>
+                                <p class="series-name">Sailor Moon</p>
+                                <span class="event-tag">Classic Tribute</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social media links untuk cosplay -->
+            <div class="cosplay-social animate-on-scroll">
+                <p class="social-text">Ikuti perjalanan cosplay saya di:</p>
+                <div class="social-links">
+                    <a href="#" class="social-link instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link twitter" title="Twitter/X">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link tiktok" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ============================================
+         CONTACT SECTION - Form kontak
+         Design: Minimalis dengan nuansa hangat
+         ============================================ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header">
+                <span class="section-tag">📮 Hubungi</span>
+                <h2 class="section-title">Mari Berbincang</h2>
+                <p class="section-subtitle">Ada proyek menarik atau sekadar ingin say hi? Jangan ragu untuk menghubungi saya!</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Contact info -->
+                <div class="contact-info animate-on-scroll">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Email</h4>
+                            <p>hello@sakuradev.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Lokasi</h4>
+                            <p>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-details">
+                            <h4>Response Time</h4>
+                            <p>Biasanya dalam 24 jam</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social links -->
+                    <div class="contact-social">
+                        <h4>Temukan saya di:</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="Twitter/X">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon" title="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact form -->
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Nama lengkap kamu" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subjek</label>
+                        <select id="subject" name="subject" class="form-input form-select">
+                            <option value="">Pilih subjek...</option>
+                            <option value="project">Kolaborasi Proyek</option>
+                            <option value="freelance">Freelance Work</option>
+                            <option value="cosplay">Cosplay Collaboration</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Pesan</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Ceritakan tentang proyek atau pertanyaan kamu..." rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane"></i> Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER - Simple dan clean
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌸</span>
+                    <span class="logo-text">SakuraDev</span>
+                </div>
+                
+                <p class="footer-tagline">
+                    Crafting code & bringing characters to life ✨
+                </p>
+                
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#portfolio">Portofolio</a>
+                    <a href="#cosplay">Cosplay</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+                
+                <p class="footer-copyright">
+                    © 2026 SakuraDev. Made with 💕 and lots of ☕
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
