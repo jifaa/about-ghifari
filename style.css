@@ -1732,12 +1732,16 @@ section {
     font-size: 0.9rem;
     color: var(--color-text-light);
     margin: 0;
+    padding-right: 70px;
 }
 
 .project-links {
     display: flex;
     gap: 10px;
     flex-shrink: 0;
+    margin-left: auto;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .project-link {
@@ -1774,6 +1778,8 @@ section {
 .project-link.github {
     background: var(--color-cream-dark);
     color: var(--color-text);
+    order: 10;
+    margin-left: auto;
 }
 
 .project-link.github:hover {
@@ -1828,10 +1834,11 @@ section {
     .project-links {
         width: 100%;
         flex-wrap: wrap;
+        justify-content: flex-end;
     }
     
     .project-link {
-        flex: 1;
+        flex: 0 1 auto;
         justify-content: center;
         min-width: 120px;
     }

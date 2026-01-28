@@ -254,7 +254,7 @@
             <div class="section-header">
                 <span class="section-tag">💼 Karya</span>
                 <h2 class="section-title">Project</h2>
-                <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan dengan sepenuh hati</p>
+                <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan</p>
             </div>
             
            <!-- Project Item 1 -->
@@ -262,6 +262,10 @@
                     <div class="project-info">
                         <h4 class="project-name">Puskesmas Loa Kulu</h4>
                         <p class="project-description">Website penyedia informasi dari puskesmas Loa Kulu</p>
+                        <div class="skill-tags" style="margin-top: 10px; margin-bottom: 5px;">
+                            <span class="skill-tag">Laravel</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
                     </div>
                     <div class="project-links">
                         <a href="https://puskesmasloakulu.com/public/" class="project-link web" target="_blank">
@@ -275,6 +279,9 @@
                     <div class="project-info">
                         <h4 class="project-name">Chord Progression Generator</h4>
                         <p class="project-description">Website untuk menentukan progresi chord</p>
+                        <div class="skill-tags" style="margin-top: 10px; margin-bottom: 5px;">
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
                     </div>
                     <div class="project-links">
                         <a href="https://chord-generator-self.vercel.app/" class="project-link web" target="_blank">
@@ -287,6 +294,9 @@
                     <div class="project-info">
                         <h4 class="project-name">Eye Controlled Mouse System</h4>
                         <p class="project-description">Sistem Kendali Kursor Mouse Berbasis Pergerakan Mata Menggunakan Metode Hybrid Convolutional Neural Network (CNN) Dan Eye Aspect Ratio (EAR)</p>
+                        <div class="skill-tags" style="margin-top: 10px; margin-bottom: 5px;">
+                            <span class="skill-tag">Python</span>
+                        </div>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/jifaa/Eye-Controlled-Mouse-System.git" class="project-link github" target="_blank">
@@ -318,7 +328,7 @@
             </div>
             
             <div class="masonry-grid">
-                <div class="cosplay-card animate-on-scroll">
+               <div class="cosplay-card animate-on-scroll">
                     <div class="cosplay-image-container">
                         <div class="slideshow" data-interval="4000">
                             <div class="slide active">
@@ -468,14 +478,8 @@
             <div class="cosplay-social animate-on-scroll">
                 <p class="social-text">Ikuti perjalanan cosplay saya di:</p>
                 <div class="social-links">
-                    <a href="#" class="social-link instagram" title="Instagram">
+                    <a href="https://www.instagram.com/thisghifari._/" class="social-link instagram" title="Instagram" target="_blank">
                         <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link twitter" title="Twitter/X">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link tiktok" title="TikTok">
-                        <i class="fab fa-tiktok"></i>
                     </a>
                 </div>
             </div>
@@ -504,14 +508,11 @@
                 </div>
                 
                 <div class="footer-social">
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/thisghifari._/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
                 
                 <p class="footer-copyright">
-                    © 2026 Ghifari. Made with 💕 and lots of ☕
+                    © 2026 Ghifari.
                 </p>
             </div>
         </div>
@@ -524,6 +525,91 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+
+    <!-- Slideshow Script -->
+    <script>
+        // Slideshow functionality - berganti setiap 4 detik dengan kontrol manual
+        document.addEventListener('DOMContentLoaded', function() {
+            const slideshows = document.querySelectorAll('.slideshow');
+            
+            slideshows.forEach(slideshow => {
+                const slides = slideshow.querySelectorAll('.slide');
+                const container = slideshow.closest('.cosplay-image-container');
+                const dots = container.querySelectorAll('.slideshow-indicators .dot');
+                const prevBtn = container.querySelector('.slide-arrow.prev');
+                const nextBtn = container.querySelector('.slide-arrow.next');
+                
+                // Skip jika hanya ada 1 slide
+                if (slides.length <= 1) {
+                    if (prevBtn) prevBtn.style.display = 'none';
+                    if (nextBtn) nextBtn.style.display = 'none';
+                    return;
+                }
+                
+                let currentIndex = 0;
+                let autoPlayInterval;
+                const intervalTime = parseInt(slideshow.dataset.interval) || 4000;
+                
+                function showSlide(index) {
+                    // Handle wrap around
+                    if (index >= slides.length) index = 0;
+                    if (index < 0) index = slides.length - 1;
+                    currentIndex = index;
+                    
+                    // Remove active class from all slides and dots
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    
+                    // Add active class to current slide and dot
+                    slides[currentIndex].classList.add('active');
+                    if (dots[currentIndex]) {
+                        dots[currentIndex].classList.add('active');
+                    }
+                }
+                
+                function nextSlide() {
+                    showSlide(currentIndex + 1);
+                }
+                
+                function prevSlide() {
+                    showSlide(currentIndex - 1);
+                }
+                
+                function resetAutoPlay() {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(nextSlide, intervalTime);
+                }
+                
+                // Arrow button click events
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        prevSlide();
+                        resetAutoPlay();
+                    });
+                }
+                
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        nextSlide();
+                        resetAutoPlay();
+                    });
+                }
+                
+                // Dot click events
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', function() {
+                        showSlide(index);
+                        resetAutoPlay();
+                    });
+                });
+                
+                // Auto-play slideshow
+                autoPlayInterval = setInterval(nextSlide, intervalTime);
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
