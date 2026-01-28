@@ -195,9 +195,7 @@ filterButtons.forEach(button => {
  * Handle form submission
  * Dalam implementasi nyata, ini akan mengirim data ke server
  */
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-
+contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form data
@@ -238,7 +236,7 @@ if (contactForm) {
         submitBtn.disabled = false;
     }, 1500);
 });
-}
+
 // ============================================
 // NOTIFICATION SYSTEM
 // ============================================
