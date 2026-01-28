@@ -495,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add loaded class to body for initial animations
     document.body.classList.add('loaded');
     
-    console.log('🌸 SakuraDev Portfolio loaded successfully!');
+    console.log('🌸 Ghifari Portfolio loaded successfully!');
 });
 
 // ============================================
