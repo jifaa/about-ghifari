@@ -479,6 +479,282 @@ lazyImages.forEach(img => {
 });
 
 // ============================================
+// CURSOR GLOW EFFECT (Subtle)
+// ============================================
+
+/**
+ * Creates a subtle glow effect following the cursor
+ */
+function initCursorGlow() {
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    glow.style.cssText = `
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(255, 205, 178, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    `;
+    document.body.appendChild(glow);
+
+    let isVisible = false;
+    
+    document.addEventListener('mousemove', (e) => {
+        if (!isVisible) {
+            glow.style.opacity = '1';
+            isVisible = true;
+        }
+        requestAnimationFrame(() => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    });
+
+    document.addEventListener('mouseleave', () => {
+        glow.style.opacity = '0';
+        isVisible = false;
+    });
+}
+
+// ============================================
+// MAGNETIC BUTTON EFFECT
+// ============================================
+
+/**
+ * Adds magnetic effect to buttons on hover
+ */
+function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.btn, .project-link, .social-link');
+    
+    buttons.forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            button.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = '';
+        });
+    });
+}
+
+// ============================================
+// TEXT REVEAL ANIMATION
+// ============================================
+
+/**
+ * Reveals text with typing/reveal effect
+ */
+function initTextReveal() {
+    const revealElements = document.querySelectorAll('.hero-title, .section-title');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('text-revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+}
+
+// ============================================
+// SMOOTH COUNTER ANIMATION
+// ============================================
+
+/**
+ * Animates number counters when visible
+ */
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.textContent);
+        if (isNaN(target)) return;
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(counter, target);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counterObserver.observe(counter);
+    });
+}
+
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    const duration = 1500;
+    const stepTime = duration / 50;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + '+';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + '+';
+        }
+    }, stepTime);
+}
+
+// ============================================
+// TILT EFFECT FOR CARDS
+// ============================================
+
+/**
+ * Adds subtle 3D tilt effect to cards
+ */
+function initTiltEffect() {
+    const cards = document.querySelectorAll('.cosplay-card, .skill-category, .project-item');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
+
+// ============================================
+// SCROLL PROGRESS INDICATOR
+// ============================================
+
+/**
+ * Shows scroll progress at top of page
+ */
+function initScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    progressBar.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #FFCDB2, #E5989B, #CDB4DB);
+        z-index: 10000;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.1s ease;
+    `;
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollTop / docHeight;
+        progressBar.style.transform = `scaleX(${progress})`;
+    });
+}
+
+// ============================================
+// IMAGE LAZY LOAD WITH FADE
+// ============================================
+
+/**
+ * Lazy loads images with smooth fade effect
+ */
+function initImageFadeIn() {
+    const images = document.querySelectorAll('.cosplay-image-container img, .illustration-placeholder img');
+    
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease';
+            
+            img.addEventListener('load', () => {
+                img.style.opacity = '1';
+                img.classList.add('loaded');
+            });
+        }
+    });
+}
+
+// ============================================
+// RIPPLE EFFECT FOR BUTTONS
+// ============================================
+
+/**
+ * Adds ripple effect on button click
+ */
+function initRippleEffect() {
+    const buttons = document.querySelectorAll('.btn, .nav-link, .project-link');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            ripple.style.cssText = `
+                position: absolute;
+                width: 0;
+                height: 0;
+                background: rgba(255, 255, 255, 0.4);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                animation: rippleAnimation 0.6s ease-out forwards;
+            `;
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+    
+    // Add ripple animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes rippleAnimation {
+            to {
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ============================================
 // INITIALIZE
 // ============================================
 
@@ -494,6 +770,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add loaded class to body for initial animations
     document.body.classList.add('loaded');
+    
+    // Initialize new interactive features
+    initCursorGlow();
+    initScrollProgress();
+    initTextReveal();
+    initCounterAnimation();
+    initImageFadeIn();
+    initRippleEffect();
+    
+    // Initialize tilt effect only on non-touch devices
+    if (!('ontouchstart' in window)) {
+        initTiltEffect();
+        initMagneticButtons();
+    }
     
     console.log('🌸 Ghifari Portfolio loaded successfully!');
 });
