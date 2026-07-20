@@ -23,7 +23,7 @@
     <!-- ============================================
          NAVIGATION - Fixed navbar dengan glass effect
          ============================================ -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <!-- Logo dengan nuansa hangat -->
             <a href="#home" class="d-flex align-items-center gap-2 fs-4 fw-bold text-decoration-none me-auto" >
@@ -53,9 +53,6 @@
     <section id="home" class="hero">
         <!-- Decorative elements untuk nuansa slice-of-life -->
         <div class="hero-decorations">
-            <div class="floating-leaf leaf-1">🍃</div>
-            <div class="floating-leaf leaf-2">🌿</div>
-            <div class="floating-leaf leaf-3">✨</div>
             <div class="sun-rays"></div>
         </div>
         
@@ -77,15 +74,15 @@
                     <span class="typing-text">Programmer</span> di awal pekan,
                     <span class="typing-text accent">Cosplayer</span> di akhir pekan.
                 </p>
-                
+
                 <!-- Deskripsi singkat -->
                 <p class="hero-description animate-fade-in-up delay-2">
                     <i>"Baris kode adalah pondasi dunia digital dari sebuah logika,
-                    Kostum dan ekspresi membangkitkan jiwa dari dunia fantasi."</i> 
+                    Kostum dan ekspresi membangkitkan jiwa dari dunia fantasi."</i>
                     <br>
                     <span style="font-size: 0.85rem; opacity: 0.8;">-Ghifari</span>
                 </p>
-                
+
                 <!-- CTA Buttons -->
                 <div class="hero-buttons animate-fade-in-up delay-3">
                     <a href="#portfolio" class="btn btn-primary">
@@ -102,14 +99,14 @@
                 <div class="illustration-frame">
                     <!-- Placeholder untuk photo profil -->
                     <div class="illustration-placeholder">
-                        <img src="Foto/profil.png" alt="profil ghifari">
+                        <img src="Foto/profil.png" alt="Ghifari - programmer dan cosplayer" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Scroll indicator -->
-        <div class="scroll-indicator animate-bounce">
+        <div class="scroll-indicator">
             <span>Scroll</span>
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -133,12 +130,9 @@
                     <div class="profile-image-container">
                         <!-- Placeholder avatar dengan style anime -->          
                             <div style="margin-top: -30px;">
-                                <img src="Foto/foto2.png" alt="foto" class="img-fluid">
+                                <img src="Foto/foto2.png" alt="Ghifari - foto pribadi" loading="lazy" class="img-fluid">
                             </div>
-                        <div class="profile-decoration">
-                            <span class="deco-flower">🌸</span>
-                            <span class="deco-star">⭐</span>
-                        </div>
+                        <div class="profile-decoration"></div>
                     </div>
                     
                     <!-- Quick stats -->
@@ -160,7 +154,7 @@
                 
                 <!-- About text -->
                 <div class="about-text animate-on-scroll">
-                    <h3 class="about-heading">Halo! Senang bertemu denganmu 🌻</h3>
+                    <h3 class="about-heading">Halo! Senang bertemu denganmu</h3>
                     
                     <p class="about-paragraph">
                         Perkenalkan, saya <strong>Ghifari</strong>, mahasiswa IT yang juga memiliki passion di dunia cosplay. Saya percaya teknologi dan seni mampu mengalir bersama, seperti mimpi yang perlahan menjadi nyata. 
@@ -195,7 +189,7 @@
                     <!-- Programming Languages -->
                     <div class="skill-category">
                         <h4 class="category-title">
-                            <span class="category-icon">💻</span> Bahasa Pemrograman
+                            <i class="fas fa-code category-icon"></i> Bahasa Pemrograman
                         </h4>
                         <div class="skill-tags">
                             <span class="skill-tag">JavaScript</span>
@@ -205,28 +199,34 @@
                             <span class="skill-tag">kotlin</span>
                         </div>
                     </div>
-                    
+
                     <!-- Frameworks -->
                     <div class="skill-category">
                         <h4 class="category-title">
-                            <span class="category-icon">🚀</span> Framework & Library
+                            <i class="fas fa-rocket category-icon"></i> Framework & Library
                         </h4>
                         <div class="skill-tags">
                             <span class="skill-tag">Laravel</span>
                             <span class="skill-tag">Bootsrap</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Next.js</span>
                         </div>
                     </div>
-                    
+
                     <!-- Tools -->
                     <div class="skill-category">
                         <h4 class="category-title">
-                            <span class="category-icon">🛠️</span> Tools & Platform
+                            <i class="fas fa-tools category-icon"></i> Tools & Platform
                         </h4>
                         <div class="skill-tags">
                             <span class="skill-tag">Git</span>
                             <span class="skill-tag">VS Code</span>
                             <span class="skill-tag">Figma</span>
                             <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Supabase</span>
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">Hostinger</span>
+                            <span class="skill-tag">Antigravity</span>
                         </div>
                     </div>
                     
@@ -307,6 +307,7 @@
                     </div>
                 </div>
             
+
             <!-- View more button -->
             <div class="portfolio-more animate-on-scroll">
                 <a href="project.html" class="btn btn-outline">
@@ -493,7 +494,7 @@
                 </div>
                 
                 <p class="footer-tagline">
-                    Turning ideas into code & bringing characters to life ✨
+                    Turning ideas into code & bringing characters to life
                 </p>
                 
                 <div class="footer-nav">
@@ -541,7 +542,14 @@
                     if (nextBtn) nextBtn.style.display = 'none';
                     return;
                 }
-                
+
+                // Add accessibility attributes to dots
+                dots.forEach((dot, index) => {
+                    dot.setAttribute('role', 'button');
+                    dot.setAttribute('tabindex', '0');
+                    dot.setAttribute('aria-label', `Slide ${index + 1} of ${slides.length}`);
+                });
+
                 let currentIndex = 0;
                 let autoPlayInterval;
                 const intervalTime = parseInt(slideshow.dataset.interval) || 4000;
@@ -592,21 +600,42 @@
                         resetAutoPlay();
                     });
                 }
-                
+
                 // Dot click events
                 dots.forEach((dot, index) => {
                     dot.addEventListener('click', function() {
                         showSlide(index);
                         resetAutoPlay();
                     });
+                    // Keyboard accessibility
+                    dot.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            showSlide(index);
+                            resetAutoPlay();
+                        }
+                    });
                 });
-                
+
+                // Pause/Play control
+                let isPaused = false;
+
+                container.addEventListener('click', function(e) {
+                    // Don't toggle if clicking on arrows or dots
+                    if (e.target.closest('.slide-arrow') || e.target.closest('.slideshow-indicators')) return;
+
+                    isPaused = !isPaused;
+                    if (isPaused) {
+                        clearInterval(autoPlayInterval);
+                    } else {
+                        autoPlayInterval = setInterval(nextSlide, intervalTime);
+                    }
+                });
+
                 // Auto-play slideshow
                 autoPlayInterval = setInterval(nextSlide, intervalTime);
             });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
 </html>

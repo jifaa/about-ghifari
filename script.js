@@ -780,14 +780,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initImageFadeIn();
     initRippleEffect();
-    
-    // Initialize tilt effect only on non-touch devices
-    if (!('ontouchstart' in window)) {
+
+    // Initialize desktop-only effects (pointer: fine checks for mice/trackpads, not touch)
+    if (window.matchMedia('(pointer: fine)').matches) {
         initTiltEffect();
         initMagneticButtons();
     }
-    
-    console.log('🌸 Ghifari Portfolio loaded successfully!');
+
+    console.log('Ghifari Portfolio loaded successfully!');
 });
 
 // ============================================

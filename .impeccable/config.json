@@ -1,0 +1,80 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "bounce-easing",
+        "value": "bouncein",
+        "createdAt": "2026-07-20T16:48:04.739Z",
+        "reason": "Back-to-top bounce is intentional playful entrance"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "arrowbounce",
+        "createdAt": "2026-07-20T16:48:12.038Z",
+        "reason": "Arrow bounce is intentional playful hover"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "typing-text",
+        "createdAt": "2026-07-20T16:48:12.111Z",
+        "reason": "Gradient text on typing-text is intentional brand accent"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "::after height",
+        "createdAt": "2026-07-20T16:56:33.480Z",
+        "reason": "Circular expand on btn-secondary is intentional button interaction"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "btn-outline",
+        "createdAt": "2026-07-20T16:56:33.551Z",
+        "reason": "Circular expand on btn-outline is intentional button interaction"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(0, 0, 0, 0.2)",
+        "createdAt": "2026-07-20T17:05:10.864Z",
+        "reason": "Slideshow indicator background - subtle UI element"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "20px",
+        "createdAt": "2026-07-20T17:05:10.944Z",
+        "reason": "Slideshow indicator pill shape - appropriate for grouped controls"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.9rem",
+        "createdAt": "2026-07-20T17:05:11.021Z",
+        "reason": "Cosplay card info typography - existing value"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.2rem",
+        "createdAt": "2026-07-20T17:05:11.094Z",
+        "reason": "Cosplay card character name - existing value"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.95rem",
+        "createdAt": "2026-07-20T17:05:40.776Z",
+        "reason": "Cosplay origin text - existing value"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffb5a7",
+        "createdAt": "2026-07-20T17:27:40.700Z",
+        "reason": "Cursor glow decorative effect - intentional coral tint"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(0,0,0,0.15)",
+        "createdAt": "2026-07-20T17:27:40.810Z",
+        "reason": "Cursor glow shadow - intentional decorative effect"
+      }
+    ]
+  }
+}
